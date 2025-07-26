@@ -33,18 +33,32 @@ using namespace std;
 // }
 // kadanes algorithms
 int main(){
-     int n =7;
-   int arr[7] ={3,-4,5,4,-1,7,-8};
-    int cm =0;
-    int ms = INT_MIN;
-    for(int i =0;i<n ;i++){
-        cm += arr[i];
-        ms = max(cm,ms);
-            if(cm <0){
+//      int n =7;
+//    int arr[7] ={3,-4,5,4,-1,7,-8};
+//     int cm =0;
+//     int ms = INT_MIN;
+//     for(int i =0;i<n ;i++){
+//         cm += arr[i];
+//         ms = max(cm,ms);
+//             if(cm <0){
 
-            cm = 0;
-        }
+//             cm = 0;
+//         }
+//     }
+//      cout<< "max sum of sub arrays :"<<ms<<endl;
+/// similar approach/////
+     int n =10;
+   int arr[10] ={0,1,1,1,1,1,1,0,1,1};
+   int cm =0;
+   int ms = INT_MIN;
+   for (int i =0 ; i<n; i++){
+    if (arr[i] == 0){
+        cm = 0;
+     
     }
-     cout<< "max sum of sub arrays :"<<ms<<endl;
+       cm += arr[i];
+        ms = max(cm,ms);
+   }
+   cout<<ms<<endl;
     return 0;
 }
