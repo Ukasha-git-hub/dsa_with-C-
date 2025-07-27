@@ -15,11 +15,16 @@ void reverse(vector<int> &n)
 }
 int main()
 {
-    vector<int> n = {1, 2, 3, 4, 5, 6, 7, 14};
-    reverse(n);
-    for (int val : n)
-    {
-        cout << val << " ";
-    }
+     int n =5;
+     int arr[5]={1,2,3,4,5};
+     for(int i = 0; i< n ; i++){
+        for(int j =i ; j <n ;j++ ){
+            for (int k =i; k<= j; k++){
+                cout<< k;
+            }
+            cout<< " ";
+        }
+        cout<< endl;
+     }
     return 0;
 }
