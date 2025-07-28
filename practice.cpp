@@ -1,30 +1,31 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
 using namespace std;
-void reverse(vector<int> &n)
-{
-    int Si = 0;
-    int Li = n.size() - 1;
-    while (Si < Li)
-    {
-        swap(n[Si], n[Li]);
-      Si++;
-      Li--;
+
+    int n (vector<int> &numb){
+     int freq =0;
+     int ans =0;
+      for(int i =0; i<numb.size(); i++){
+         if(freq == 0){
+            ans = numb[i];
+         }
+         if (ans == numb[i]){
+          freq++;
+         }
+         else{
+          freq--;
+
+         }
+      
+      }
+         return ans;
     }
-     
-}
+    
+    
 int main()
 {
-     int n =5;
-     int arr[5]={1,2,3,4,5};
-     for(int i = 0; i< n ; i++){
-        for(int j =i ; j <n ;j++ ){
-            for (int k =i; k<= j; k++){
-                cout<< k;
-            }
-            cout<< " ";
-        }
-        cout<< endl;
-     }
-    return 0;
+vector <int > numb = {1,2,2,2,1,1,1,2,2};
+cout<<n(numb)<<endl;
 }
