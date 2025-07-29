@@ -3,29 +3,41 @@
 #include <algorithm>
 
 using namespace std;
-
-    int n (vector<int> &numb){
-     int freq =0;
-     int ans =0;
-      for(int i =0; i<numb.size(); i++){
-         if(freq == 0){
-            ans = numb[i];
+vector<int> n(vector<int> &dupN)
+{
+   vector<int> ans;
+   for (int num : dupN)
+   {
+      int freq = 0;
+      for (int el : dupN)
+      {
+         if (el == num)
+         {
+            freq++;
          }
-         if (ans == numb[i]){
-          freq++;
-         }
-         else{
-          freq--;
-
-         }
-      
       }
-         return ans;
-    }
-    
-    
+      if (freq >= 2 && find(ans.begin(),ans.end(),num) == ans.end())
+      {
+         ans.push_back(num);
+      }
+   }
+   return ans;
+}
+
 int main()
 {
-vector <int > numb = {1,2,2,2,1,1,1,2,2};
-cout<<n(numb)<<endl;
+   vector<int> dupN = {
+       1,
+       2,
+       2,
+       4,
+       5,
+       5,
+       5,
+   };
+
+  vector <int> result = n(dupN) ;
+ for(int nums : result){
+   cout << nums<<" ";
+ }
 }
