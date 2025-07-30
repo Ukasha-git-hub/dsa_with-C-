@@ -60,6 +60,28 @@ using namespace std;
       }
          return ans;
     }
+    ///  mejority element > n/3; 
+     vector<int> n(vector<int> &dupN)
+{
+   vector<int> ans;
+   for (int num : dupN)
+   {
+      int freq = 0;
+      for (int el : dupN)
+      {
+         if (el == num)
+         {
+            freq++;
+         }
+      }
+      if (freq >= 2 && find(ans.begin(),ans.end(),num) == ans.end())
+      {
+         ans.push_back(num);
+      }
+   }
+   return ans;
+}
+
 int main(){
     vector <int > num = {0,0,1,1,2,2,2,2,2};
 cout<<BruteN(num)<<endl;
